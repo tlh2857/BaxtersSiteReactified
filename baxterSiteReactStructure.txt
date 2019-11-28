@@ -1,0 +1,14 @@
+
+
+App.js 
+
+	container-fluis element -- global 
+	imports header, navbar, modal, footer, mainContent.js
+	app.js contains state, distributes 
+
+	header.js
+	navbar.js
+	modal.js
+	mainContent.js
+	footer.js
+
