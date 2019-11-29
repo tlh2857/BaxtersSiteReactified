@@ -1,26 +1,21 @@
-import React from 'react';
+import React,{useState} from 'react';
 import './App.css';
 import Header from './components/Header';
 import MainContent from './components/MainContent';
 import Footer from './components/Footer';
 
 
-class App extends React.Component{
-    constructor(props){
-        super(props);
-        this.state={
-            visibility:'top',
-        };
-    }
-    render(){
+const App = () => {
+  const [section, setSection] = useState('main');
+  const [navbarView, setNavbarView] = useState('');
         return(
             <div className='container-fluid'>
-                <Header visibility={this.state.visibility}/>
-                <MainContent />
+                <Header navbarView={setNavbarView} section={section} setSection={setSection}/>
+                <MainContent setNavbarView={setNavbarView} section={section} setSection={setSection} />
                 <Footer />
             </div>
         )
     }
-}
+
 
 export default App;

@@ -6,7 +6,8 @@ const styles = {
         height:'auto',
         padding: '-1rem 1rem 1rem 1rem',
         backgroundColor:'#5cffff17',
-        fontFamily: `'Bebas Neue', 'Cedarville', cursive',`,
+        fontFamily: 'Bebas Neue',
+        marginTop:'1rem'
 
     }
     
