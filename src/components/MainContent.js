@@ -31,7 +31,7 @@ function MainContent(props){
     return(
         <div>
             <Banner />
-            <Navbar section={props.section} setSection={props.setSection} />
+            <Navbar setNavbarView={props.setNavbarView} section={props.section} setSection={props.setSection} />
             {sectionTester(props.section)}
             </div>
     )

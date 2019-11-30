@@ -13,7 +13,8 @@ const styles={
         appointmentAlert: {
             fontFamily: 'Questrial',
             fontSize:'1.5rem', 
-            marginTop: '1rem',
+            marginTop: '1.6rem',
+            marginLeft: '5rem',
 
         },
         title: {
@@ -25,11 +26,13 @@ const styles={
 
 
 function Header(props){
-     const headerRef = useRef();
+    const headerRef = useRef();
+    const navbar = <Navbar setSection={props.setSection}/>;
+    const appointmentAlert = <AppointmentAlert />
 
      function headerRefLogger(){
-    console.log(Object.keys(headerRef.current.getBoundingClientRect()));
-     }
+        return props.navbarView<50;
+        } 
 
      useEffect(() => {
     window.addEventListener("scroll", headerRefLogger, true);
@@ -38,18 +41,16 @@ function Header(props){
     };
   });
 
-    const navbar = <Navbar setSection={props.setSection}/>;
-    const appointmentAlert = <AppointmentAlert />
-    const headerView = 1; //change this line to select the boudning client header ref 
-    const navbarView = 1; //change this line to select the bounding client navbar ref
-  
+    
+
+
     
 
     return(
      
             <div ref={headerRef} className='row sticky-top justify-content-center justify-content-sm-center justify-content-md-between' style={styles.rowA}>
                 <div className='col-4 col-sm-8 col-md-7 col-lg-7 col-xl-5 order-last ' style={styles.container}>
-                    {true?appointmentAlert:navbar}
+                    {headerRefLogger()? navbar:appointmentAlert}
                 </div>
                 <div className='col-12 col-sm-4 col-lg-4'>
                     <h2 role='button' onClick={e=>{e.preventDefault();props.setSection('main')}} style={styles.title} className='text-center'>Baxter's Salon</h2>
